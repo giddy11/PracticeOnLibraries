@@ -1,7 +1,7 @@
 ﻿using DemoLibrary;
 
 
-string fName, lName, fullName;
+string? fName, lName, fullName;
 
 Console.Write("What is your First name: ");
 fName = Console.ReadLine();
