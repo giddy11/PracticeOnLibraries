@@ -16,8 +16,28 @@
         <StackPanel>
             <TextBox Width="100"
                      HorizontalAlignment="Left"
-                     Margin="20"/>
-            <TextBox />
+                     Margin="20"
+                     Name="txtBox1"/>
+
+            <TextBox Width="20"
+                     HorizontalAlignment="Left"
+                     Margin="100 20 0 0"
+                     Name="txtBox2"/>
+
+            <TextBox Width="100"
+                     HorizontalAlignment="Left"
+                     Margin="20"
+                     Name="txtBox3"/>
+
+            <Button Width="40"
+                    Height="20"
+                    Content="Solve"
+                    Click="Solve_Click"/>
+
+            <TextBox Width="100"
+                     HorizontalAlignment="Left"
+                     Margin="20"
+                     Name="txtBox4"/>
         </StackPanel>
     </Grid>
 </Window>
