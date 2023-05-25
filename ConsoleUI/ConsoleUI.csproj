@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\DemoLibrary.csproj" />
+    <ProjectReference Include="..\TempConversionLibrary\TempConversionLibrary.csproj" />
   </ItemGroup>
 
 </Project>
