@@ -6,13 +6,17 @@ public static class GlobalConfig
     {
         if (database)
         {
-            // TODO - Create the SQL Connection
+            // TODO - Set up the SQL connector properly
+            SqlConnector sql = new SqlConnector();
+            Connections.Add(sql);
         }
 
         if (textFiles)
         {
             // TODO - Create the Text Connection
+            TextConnector text = new TextConnector();
+            Connections.Add(text);
         }
     }
-    public static List<IDataConnection> Connections { get; private set; }
+    public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
 }
