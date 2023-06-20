@@ -1,4 +1,6 @@
-﻿namespace TournamentTracker.Library.DatabaseConnection;
+﻿using TournamentTracker.Library.DataAccess;
+
+namespace TournamentTracker.Library;
 
 public static class GlobalConfig
 {

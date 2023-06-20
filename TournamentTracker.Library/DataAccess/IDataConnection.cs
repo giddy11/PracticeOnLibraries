@@ -1,6 +1,6 @@
 ﻿using TournamentTracker.Library.Models;
 
-namespace TournamentTracker.Library.DatabaseConnection;
+namespace TournamentTracker.Library.DataAccess;
 
 public interface IDataConnection
 {
