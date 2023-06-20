@@ -1,24 +1,51 @@
-﻿using TournamentTracker.Library.DataAccess;
+﻿using System.Configuration;
+using TournamentTracker.Library.DataAccess;
 
 namespace TournamentTracker.Library;
 
 public static class GlobalConfig
 {
-    public static void InitializeConnection(bool database, bool textFiles)
+    public static void InitializeConnection(DatabaseType db)
     {
-        if (database)
+        switch(db)
         {
-            // TODO - Set up the SQL connector properly
-            SqlConnector sql = new SqlConnector();
-            Connections.Add(sql);
+            case DatabaseType.Sql:
+                // TODO - Set up the SQL connector properly
+                SqlConnector sql = new SqlConnector();
+                Connection = sql;
+                break;
+
+            case DatabaseType.TextFile:
+                // TODO - Create the Text Connection
+                TextConnector text = new TextConnector();
+                Connection = text;
+                break;
+
+            default:
+                break;
+
         }
 
-        if (textFiles)
-        {
-            // TODO - Create the Text Connection
-            TextConnector text = new TextConnector();
-            Connections.Add(text);
-        }
+
+        //if (db == DatabaseType.Sql)
+        //{
+        //    // TODO - Set up the SQL connector properly
+        //    SqlConnector sql = new SqlConnector();
+        //    Connections = sql;
+        //}
+        //else if (db == DatabaseType.TextFile)
+        //{
+        //    // TODO - Create the Text Connection
+        //    TextConnector text = new TextConnector();
+        //    Connections = text;
+        //}
     }
-    public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+
+    public static string ConString(string name)
+    {
+        return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+    }
+
+
+    public static IDataConnection Connection { get; private set; }
 }
